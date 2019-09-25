@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os, requests
 
 api_key = os.environ['ACCUWEATHER_API_KEY']
@@ -17,4 +19,13 @@ def get_location_key():
 
 	location_key = '39601_PC'
 
+	print(location_key)
+
 	return location_key
+
+def get_hourly_forecast(location_key):
+	"""Gets next 12 hours of hourly forecast and prints to terminal"""
+
+	pass
+
+get_location_key()
