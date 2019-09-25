@@ -1,27 +1,35 @@
 #!/usr/bin/env python3
 
-import os, requests
+import os, requests, sys
 
 api_key = os.environ['ACCUWEATHER_API_KEY']
 
 def get_location_key():
 	"""Takes zipcode, queries Accuweather API and returns location key"""
 
-	zipcode = '94607'
+	zipcode = str(sys.argv[1])
 
-	# url = f'http://dataservice.accuweather.com/locations/v1/search?apikey={api_key}&q={zipcode}'
+	# validate user entry for zipcode
+	if len(zipcode) != 5 or not zipcode.isnumeric():
+		print(f'"{zipcode}"" is not a valid zipcode.')
+		print('Please enter 5 digit zipcode')
 
-	# response = requests.get(url)
+	else:
 
-	# data = response.json()
+		# url = f'http://dataservice.accuweather.com/locations/v1/search?apikey={api_key}&q={zipcode}'
 
-	# location_key = data[0]['Key']
+		# response = requests.get(url)
 
-	location_key = '39601_PC'
+		# data = response.json()
 
-	print(location_key)
+		# location_key = data[0]['Key']
 
-	return location_key
+		location_key = '39601_PC'
+
+		print(location_key)
+
+		return location_key
+
 
 def get_hourly_forecast(location_key):
 	"""Gets next 12 hours of hourly forecast and prints to terminal"""
