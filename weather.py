@@ -1,20 +1,25 @@
 #!/usr/bin/env python3
 
-import requests, sys, json
+import os, requests, sys, json
 from datetime import datetime
 
-with open('~/.config/weather_app/config.json') as json_file:
+# ~ does not point to the correct spot, need to get the path for ~
+from os.path import expanduser
+home = expanduser("~")
+
+filepath = home + '/.config/weather_app/config.json'
+
+with open(filepath) as json_file:
 	config_data = json.load(json_file)
 
 api_key = config_data['ACCUWEATHER_API_KEY']
 
-if config_data['DEFAULT_ZIPCODE'] is None:
-	zipcode = config_datastr(sys.argv[1])
-else:
+# check to see if user entered a zipcode in command line, if not use the default
+if len(sys.argv) == 1:
 	zipcode = config_data['DEFAULT_ZIPCODE']
+else:
+	zipcode = str(sys.argv[1])
 
-print('api_key', api_key)
-print('zipcode', zipcode)
 
 def get_location_key():
 	"""Takes zipcode, queries Accuweather API and returns location key"""
@@ -110,6 +115,6 @@ def display_forecast():
 
 		print('\nData courtesy of AccuWeather')
 
-# display_forecast()
+display_forecast()
 
 

@@ -2,7 +2,7 @@
 
 echo Enter your AccuWeather API Key:
 read apiKey
-echo Enter default zipcode (ENTER to leave blank)
+echo Enter default zipcode:
 read zipcode
 
 mkdir -p ~/.config/weather_app
