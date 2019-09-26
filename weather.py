@@ -57,8 +57,15 @@ def get_hourly_forecast(location_key):
 
 		time = datetime_object.strftime('%I %p')
 
+		temperature = str(int(item['Temperature']['Value'])) + item['Temperature']['Unit']
 
-		print(time)
+		precipitation = str(item['PrecipitationProbability'] * 10) + '%'
+
+		condition = item['IconPhrase']
+
+		# redo with string.format or width to improve formatting 
+
+		print(f'    {time}:   {temperature}    Precip: {precipitation}    Conditions: {condition}')
 
 	
 
