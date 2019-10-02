@@ -17,7 +17,7 @@ Please note that an AccuWeather API Key is needed for this tool. This is free fo
 ## <a name="techstack"></a>Tech Stack
 __Tech Stack:__ Python
 
-## <a name="features"></a>
+## <a name="features"></a>Features
 To get the weather forecast for your default zipcode:
 ```
 $ weather
@@ -26,7 +26,7 @@ $ weather
 
 To get the weather forecast for a different zipcode:
 ```
-$ weather zipcode
+$ weather ZIPCODE
 ```
 ![zipcode](/static/withzip.png)
 
