@@ -26,8 +26,9 @@ def get_location_key():
 
 	# validate user entry for zipcode
 	if len(zipcode) != 5 or not zipcode.isnumeric():
-		print(f'"{zipcode}"" is not a valid zipcode.')
-		print('Please enter 5 digit zipcode')
+		print(f'"{zipcode}"" provided was not a valid zipcode. Please enter 5 digit zipcode.')
+		print('If no zipcode was provided, zipcode in config file is incorrect.')
+		print("Correct error in ~/.config/weather_app/config.json or provide zipcode with 'weather' command")
 
 		return 
 
