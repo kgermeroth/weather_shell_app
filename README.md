@@ -26,7 +26,7 @@ $ weather
 
 To get the weather forecast for a different zipcode:
 ```
-$ weather 20002
+$ weather zipcode
 ```
 ![zipcode](/static/withzip.png)
 
@@ -36,6 +36,34 @@ $ weather 20002
 - Python 3.6.8
 - [AccuWeather API Key](#apikey)
 
+To install this tool on your machine, please follow the below steps:
+
+Clone repository into a folder of your choice:
+```
+$ git clone https://github.com/kgermeroth/weather_shell_app
+```
+
+Choose a directory in your path for the remainder of installation. 
+
+If you are unsure of this step, it is recommended to create a 'bin' directory in your ~ (home) directory and then ensure it is in your path. 
+Learn how to add a directory to your path <a href="https://www.techrepublic.com/article/how-to-add-directories-to-your-path-in-linux/">here</a>. 
+
+While in the directory where you cloned the project, run the following code, replacing the capitalized variables with the appropriate arguments:
+```
+$ ./install.sh INSTALL_DIRECTORY API_KEY DEFAULT_ZIPCODE
+```
+
+That's it! Now you have the weather at your fingertips regardless of what directory you are in. 
+
+For weather for your default zipcode:
+```
+$ weather
+```
+
+For weather for a different zipcode:
+```
+$ weather ZIPCODE
+```
 
 ## <a name="apikey"></a>Getting Your AccuWeather API Key
 Register for an AccuWeather account <a href="https://developer.accuweather.com/user/register">here</a>.</br>
